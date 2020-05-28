@@ -11,9 +11,11 @@ constructor(props){
 }
 
 handleClick(button_text){
-  this.setState(incorrectAnswer, false)
 if(button_text === this.props.quiz_question.answer){
+  this.setState({incorrectAnswer: false})
   this.props.showNextQuestionHandler()
+} else{
+  this.setState({incorrectAnswer: true})
 }
 
 }
